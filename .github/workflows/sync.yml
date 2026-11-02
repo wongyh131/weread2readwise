@@ -1,10 +1,7 @@
-yaml
 name: weread2readwise
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 0 * * *' # 每天國際時間 0:00 (香港時間早上 8:00) 自動同步
 
 jobs:
   sync:
