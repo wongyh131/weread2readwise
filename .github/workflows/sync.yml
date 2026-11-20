@@ -3,16 +3,17 @@ name: weread2readwise
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * *' # 每日香港時間朝早 8 點自動同步
+    - cron: '0 0 * * *'
+
 jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: '3.11'
 
@@ -25,4 +26,7 @@ jobs:
         env:
           WEREAD_COOKIE: ${{ secrets.WEREAD_COOKIE }}
           READWISE_TOKEN: ${{ secrets.READWISE_TOKEN }}
+          CC_URL: ${{ secrets.CC_URL }}
+          CC_ID: ${{ secrets.CC_ID }}
+          CC_PASSWORD: ${{ secrets.CC_PASSWORD }}
         run: python main.py
