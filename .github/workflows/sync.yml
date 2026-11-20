@@ -29,4 +29,7 @@ jobs:
           CC_URL: ${{ secrets.CC_URL }}
           CC_ID: ${{ secrets.CC_ID }}
           CC_PASSWORD: ${{ secrets.CC_PASSWORD }}
+          COOKIECLOUD_URL: ${{ secrets.CC_URL }}
+          COOKIECLOUD_UUID: ${{ secrets.CC_ID }}
+          COOKIECLOUD_PASSWORD: ${{ secrets.CC_PASSWORD }}
         run: python main.py
